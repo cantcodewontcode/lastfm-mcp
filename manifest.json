@@ -1,0 +1,103 @@
+{
+  "manifest_version": "0.3",
+  "name": "lastfm-mcp",
+  "display_name": "Last.fm",
+  "version": "1.2.0",
+  "description": "Scrobble tracks and albums, manage loved songs, view listening stats",
+  "long_description": "Connect Claude to your Last.fm account. Scrobble individual tracks or full albums (timestamps calculated automatically), mark tracks as loved, and browse your listening history and charts.\n\nSETUP (takes ~2 minutes):\n1. Get a free Last.fm account at https://www.last.fm/join if you don't have one\n2. Register a free API app at https://www.last.fm/api/account/create\n   - Fill in any name/description, leave Callback URL and Homepage blank\n   - Copy your API key and Shared secret from the confirmation page\n3. Run lastfm_authorize with your api_key and api_secret \u2014 your browser will open\n4. Click Allow access on Last.fm, then run lastfm_authorize with check_status=true\n\nJust ask Claude to help you get set up and it will walk you through every step.",
+  "author": {
+    "name": "cantcodewontcode",
+    "url": "https://github.com/cantcodewontcode"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/dist/index.js"
+      ],
+      "env": {
+        "LASTFM_CONFIG_PATH": "${__dirname}/lastfm-config.json"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "lastfm_authorize",
+      "description": "Set up and authorize Last.fm. Run this first \u2014 guides you through every step."
+    },
+    {
+      "name": "lastfm_auth_status",
+      "description": "Check whether Last.fm is connected and which account is active"
+    },
+    {
+      "name": "lastfm_scrobble",
+      "description": "Scrobble a single track"
+    },
+    {
+      "name": "lastfm_scrobble_album",
+      "description": "Scrobble a full album with auto-calculated timestamps"
+    },
+    {
+      "name": "lastfm_update_now_playing",
+      "description": "Set the now-playing indicator on your profile"
+    },
+    {
+      "name": "lastfm_love_track",
+      "description": "Mark a track as loved"
+    },
+    {
+      "name": "lastfm_unlove_track",
+      "description": "Remove loved status from a track"
+    },
+    {
+      "name": "lastfm_get_loved_tracks",
+      "description": "Fetch your loved tracks list"
+    },
+    {
+      "name": "lastfm_get_recent_scrobbles",
+      "description": "Fetch your recent listening history"
+    },
+    {
+      "name": "lastfm_get_user_info",
+      "description": "Get your Last.fm profile stats"
+    },
+    {
+      "name": "lastfm_get_top_tracks",
+      "description": "Get your most-played tracks by time period"
+    },
+    {
+      "name": "lastfm_get_top_artists",
+      "description": "Get your most-played artists by time period"
+    },
+    {
+      "name": "lastfm_get_top_albums",
+      "description": "Get your most-played albums by time period"
+    },
+    {
+      "name": "lastfm_search_track",
+      "description": "Search the Last.fm catalogue for a track"
+    }
+  ],
+  "tools_generated": false,
+  "keywords": [
+    "lastfm",
+    "last.fm",
+    "scrobble",
+    "music",
+    "listening history"
+  ],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "privacy_policy_url": "https://github.com/cantcodewontcode/lastfm-mcp/blob/main/PRIVACY.md"
+}

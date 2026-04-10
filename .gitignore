@@ -1,0 +1,18 @@
+# Build output
+dist/
+
+# Dependencies
+node_modules/
+
+# Per-user config and auth state (never commit these)
+lastfm-config.json
+lastfm-config.json.pending
+
+# Packed bundle (built artifact, not source)
+*.mcpb
+
+# macOS
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
