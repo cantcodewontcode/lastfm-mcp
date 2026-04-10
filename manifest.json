@@ -99,5 +99,7 @@
       "node": ">=18.0.0"
     }
   },
-  "privacy_policy_url": "https://github.com/cantcodewontcode/lastfm-mcp/blob/main/PRIVACY.md"
+  "privacy_policies": [
+    "https://github.com/cantcodewontcode/lastfm-mcp/blob/main/PRIVACY.md"
+  ]
 }
